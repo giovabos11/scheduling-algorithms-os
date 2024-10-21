@@ -34,11 +34,14 @@ public class RR implements Algorithm {
             if (currentTask.getBurst() <= 0) {
                 System.out.println("Task " + currentTask.getName() + " Finished\n");
                 queue.remove(currentTask);
+                nextTaskIndex--;
             }
 
             // Update next task index
             nextTaskIndex++;
-            nextTaskIndex = nextTaskIndex % Math.max(queue.size(), 1);
+            if (!queue.isEmpty()) {
+                nextTaskIndex = nextTaskIndex % queue.size();
+            }
         }
     }
 
