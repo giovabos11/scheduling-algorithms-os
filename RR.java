@@ -28,7 +28,7 @@ public class RR implements Algorithm {
             CPU.run(currentTask, Math.min(quantum, currentTask.getBurst()));
 
             // Update process burst time
-            currentTask.setBurst(currentTask.getBurst() - quantum);
+            currentTask.setBurst(currentTask.getBurst() - Math.min(quantum, currentTask.getBurst()));
 
             // Check to remove the task from the queue
             if (currentTask.getBurst() <= 0) {
