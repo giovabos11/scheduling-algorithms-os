@@ -28,6 +28,7 @@ public class FCFS implements Algorithm
             CPU.run(currentTask, currentTask.getBurst());
 
             // Remove the task from the queue
+            System.out.println("Task " + currentTask.getName() + " finished.\n");
             queue.remove(currentTask);
         }
     }
